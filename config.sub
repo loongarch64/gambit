@@ -173,7 +173,7 @@ case $1 in
 					| ultra | tti* | harris | dolphin | highlevel | gould \
 					| cbm | ns | masscomp | apple | axis | knuth | cray \
 					| microblaze* | sim | cisco \
-					| oki | wec | wrs | winbond)
+					| oki | wec | wrs | winbond | loongarch64* | loongarch*)
 						basic_machine=$field1-$field2
 						os=
 						;;
@@ -1191,6 +1191,7 @@ case $cpu-$vendor in
 			| mips | mipsbe | mipseb | mipsel | mipsle \
 			| mips16 \
 			| mips64 | mips64eb | mips64el \
+			| loongarch64 | loongarch32 | loongarch \
 			| mips64octeon | mips64octeonel \
 			| mips64orion | mips64orionel \
 			| mips64r5900 | mips64r5900el \

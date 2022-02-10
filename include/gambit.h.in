@@ -443,6 +443,18 @@
 #endif
 #endif
 
+#ifndef ___CPU_loongarch64
+
+#ifdef __loongarch__
+#define ___CPU_loongarch64
+#else
+#ifdef __loongarch64
+#define ___CPU_loongarch64
+#endif
+#endif
+
+#endif
+
 /*
  * Determine the byte order endianness based on the processor type.
  * We assume that all processors are little-endian, except the sparc and
@@ -516,6 +528,10 @@
 #endif
 
 #ifdef ___CPU_riscv
+#define ___LITTLE_ENDIAN
+#endif
+
+#ifdef ___CPU_loongarch64
 #define ___LITTLE_ENDIAN
 #endif
 

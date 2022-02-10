@@ -991,6 +991,9 @@ EOF
     m68*:Linux:*:*)
 	echo "$UNAME_MACHINE"-unknown-linux-"$LIBC"
 	exit ;;
+    loongarch64*:Linux:*:*)
+	echo "$UNAME_MACHINE"-unknown-linux-"$LIBC"
+	exit ;;
     mips:Linux:*:* | mips64:Linux:*:*)
 	set_cc_for_build
 	IS_GLIBC=0
