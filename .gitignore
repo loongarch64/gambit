@@ -129,6 +129,7 @@ gsc/libgambitgsc.a
 gsc/gsc
 gsc/gsc.exe
 gsc/makefile
+gsc/_loongarch64.c
 gsi/_gambitgsi.o
 gsi/_gsilib.o
 gsi/_gsi.o
