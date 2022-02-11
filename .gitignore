@@ -129,7 +129,11 @@ gsc/libgambitgsc.a
 gsc/gsc
 gsc/gsc.exe
 gsc/makefile
+<<<<<<< HEAD
 gsc/_loongarch64.o
+=======
+gsc/_loongarch64.c
+>>>>>>> 0903198c9c8051fd28ddb25aafced084cdad8ce9
 gsi/_gambitgsi.o
 gsi/_gsilib.o
 gsi/_gsi.o
