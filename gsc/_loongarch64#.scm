@@ -17,7 +17,7 @@ loongarch64-reg-field
 
 loongarch64-r0
 loongarch64-r1
-loongarch64-r2
+loongarch64-r2    ;;tp
 loongarch64-r3
 loongarch64-r4
 loongarch64-r5
@@ -36,7 +36,7 @@ loongarch64-r17
 loongarch64-r18
 loongarch64-r19
 loongarch64-r20
-loongarch64-r21    ;;tp
+loongarch64-r21    ;;x
 loongarch64-r22    ;;fp
 loongarch64-r23    ;;s0
 loongarch64-r24    ;;s1
@@ -51,7 +51,7 @@ loongarch64-pc
 
 loongarch64-zero  ;;r0
 loongarch64-ra    ;;r1
-loongarch64-gp    ;;r2
+loongarch64-tp    ;;r2
 loongarch64-sp    ;;r3
 loongarch64-a0    ;;r4
 loongarch64-v0    ;;r4
@@ -72,7 +72,7 @@ loongarch64-t5
 loongarch64-t6    ;;r18
 loongarch64-t7    ;;r19
 loongarch64-t8    ;;r20
-loongarch64-tp    ;;r21
+loongarch64-x    ;;r21
 loongarch64-fp    ;;r22
 loongarch64-s0    ;;r23
 loongarch64-s1    ;;r24
@@ -222,7 +222,7 @@ loongarch64-pcaddu12i ;;auipc
      (loongarch64-registers-implement)))
 
 (define-macro (loongarch64-define-registers . regs)
-  (let* ((names (make-vector 35))
+  (let* ((names (make-vector 33))
          (defs (apply
                  append
                  (map (lambda (r)
@@ -249,38 +249,38 @@ loongarch64-pcaddu12i ;;auipc
 (loongarch64-define-registers
   (0 r0 zero)  ;; hardwired to 0, ignores writes
   (1 r1 ra)    ;; return address for jumps
-  (2 r2 gp)    ;; stack pointer
-  (3 r3 sp)    ;; global pointer
+  (2 r2 tp)    ;; thread local storage pointer
+  (3 r3 sp)    ;; stack pointer
   (4 r4 a0)    ;; thread pointer
-  (5 r4 v0)
-  (6 r5 a1)    ;; temporary register 0
-  (7 r5 v1)
-  (8 r6 a2)    ;; temporary register 1
-  (9 r7 a3)    ;; temporary register 2
-  (10 r8 a4) ;; saved register 0 or frame pointer
-  (11 r9 a5)    ;; saved register 1
-  (12 r10 a6)  ;; return value or function argument 0
-  (13 r11 a7)  ;; return value or function argument 1
-  (14 r12 t0)  ;; function argument 2
-  (15 r13 t1)  ;; function argument 3
-  (16 r14 t2)  ;; function argument 4
-  (17 r15 t3)  ;; function argument 5
-  (18 r16 t4)  ;; function argument 6
-  (19 r17 t5)  ;; function argument 7
-  (20 r18 t6)  ;; saved register 2
-  (21 r19 t7)  ;; saved register 3
-  (22 r20 t8)  ;; saved register 4
-  (23 r21 tp)  ;; saved register 5
-  (24 r22 fp)  ;; saved register 6
-  (25 r23 s0)  ;; saved register 7
-  (26 r24 s1)  ;; saved register 8
-  (27 r25 s2)  ;; saved register 9
-  (28 r26 s3) ;; saved register 10
-  (29 r27 s4) ;; saved register 11
-  (30 r28 s5)  ;; temporary register 3
-  (31 r29 s6)  ;; temporary register 4
-  (32 r30 s7)  ;; temporary register 5
-  (33 r31 s8)  ;; temporary register 6
-  (34 pc))     ;; program counter
+;;  (5 r4 v0)
+  (5 r5 a1)    ;; temporary register 0
+;;  (7 r5 v1)
+  (6 r6 a2)    ;; temporary register 1
+  (7 r7 a3)    ;; temporary register 2
+  (8 r8 a4)   ;; saved register 0 or frame pointer
+  (9 r9 a5)   ;; saved register 1
+  (10 r10 a6)  ;; return value or function argument 0
+  (11 r11 a7)  ;; return value or function argument 1
+  (12 r12 t0)  ;; function argument 2
+  (13 r13 t1)  ;; function argument 3
+  (14 r14 t2)  ;; function argument 4
+  (15 r15 t3)  ;; function argument 5
+  (16 r16 t4)  ;; function argument 6
+  (17 r17 t5)  ;; function argument 7
+  (18 r18 t6)  ;; saved register 2
+  (19 r19 t7)  ;; saved register 3
+  (20 r20 t8)  ;; saved register 4
+  (21 r21 x)   ;; reserved Unused
+  (22 r22 fp)  ;; saved register 6
+  (23 r23 s0)  ;; saved register 7
+  (24 r24 s1)  ;; saved register 8
+  (25 r25 s2)  ;; saved register 9
+  (26 r26 s3)  ;; saved register 10
+  (27 r27 s4)  ;; saved register 11
+  (28 r28 s5)  ;; temporary register 3
+  (29 r29 s6)  ;; temporary register 4
+  (30 r30 s7)  ;; temporary register 5
+  (31 r31 s8)  ;; temporary register 6
+  (32 pc))     ;; program counter
  
 ;;;============================================================================
