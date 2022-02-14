@@ -67,7 +67,7 @@
     loongarch64-registers         ;; Main registers
     (loongarch64-tp)             ;; Processor state pointer (PS)
     (loongarch64-sp)              ;; Stack pointer (SP)
-    (loongarch64-gp)))           ;; Heap pointer (HP)
+    (loongarch64-fp)))           ;; frame pointer (FP)
 
 (define loongarch64-registers
   (vector

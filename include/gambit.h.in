@@ -445,12 +445,8 @@
 
 #ifndef ___CPU_loongarch64
 
-#ifdef __loongarch__
-#define ___CPU_loongarch64
-#else
 #ifdef __loongarch64
 #define ___CPU_loongarch64
-#endif
 #endif
 
 #endif
