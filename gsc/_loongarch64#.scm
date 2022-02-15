@@ -251,36 +251,36 @@ loongarch64-pcaddu12i ;;auipc
   (1 r1 ra)    ;; return address for jumps
   (2 r2 tp)    ;; thread local storage pointer
   (3 r3 sp)    ;; stack pointer
-  (4 r4 a0)    ;; thread pointer
+  (4 r4 a0)    ;; return value or function argument 0
 ;;  (5 r4 v0)
-  (5 r5 a1)    ;; temporary register 0
+  (5 r5 a1)    ;; return value or function argument 1
 ;;  (7 r5 v1)
-  (6 r6 a2)    ;; temporary register 1
-  (7 r7 a3)    ;; temporary register 2
-  (8 r8 a4)   ;; saved register 0 or frame pointer
-  (9 r9 a5)   ;; saved register 1
-  (10 r10 a6)  ;; return value or function argument 0
-  (11 r11 a7)  ;; return value or function argument 1
-  (12 r12 t0)  ;; function argument 2
-  (13 r13 t1)  ;; function argument 3
-  (14 r14 t2)  ;; function argument 4
-  (15 r15 t3)  ;; function argument 5
-  (16 r16 t4)  ;; function argument 6
-  (17 r17 t5)  ;; function argument 7
-  (18 r18 t6)  ;; saved register 2
-  (19 r19 t7)  ;; saved register 3
-  (20 r20 t8)  ;; saved register 4
+  (6 r6 a2)    ;; function argument 2
+  (7 r7 a3)    ;; function argument 3
+  (8 r8 a4)    ;; function argument 4
+  (9 r9 a5)    ;; function argument 5
+  (10 r10 a6)  ;; function argument 6
+  (11 r11 a7)  ;; function argument 7
+  (12 r12 t0)  ;; temporary register 0
+  (13 r13 t1)  ;; temporary register 1
+  (14 r14 t2)  ;; temporary register 2
+  (15 r15 t3)  ;; temporary register 3
+  (16 r16 t4)  ;; temporary register 4
+  (17 r17 t5)  ;; temporary register 5
+  (18 r18 t6)  ;; temporary register 6
+  (19 r19 t7)  ;; temporary register 7
+  (20 r20 t8)  ;; temporary register 8
   (21 r21 x)   ;; reserved Unused
-  (22 r22 fp)  ;; saved register 6
-  (23 r23 s0)  ;; saved register 7
-  (24 r24 s1)  ;; saved register 8
-  (25 r25 s2)  ;; saved register 9
-  (26 r26 s3)  ;; saved register 10
-  (27 r27 s4)  ;; saved register 11
-  (28 r28 s5)  ;; temporary register 3
-  (29 r29 s6)  ;; temporary register 4
-  (30 r30 s7)  ;; temporary register 5
-  (31 r31 s8)  ;; temporary register 6
+  (22 r22 fp)  ;; frame pointer
+  (23 r23 s0)  ;; saved register 0
+  (24 r24 s1)  ;; saved register 1
+  (25 r25 s2)  ;; saved register 2
+  (26 r26 s3)  ;; saved register 3
+  (27 r27 s4)  ;; saved register 4
+  (28 r28 s5)  ;; saved register 5
+  (29 r29 s6)  ;; saved register 6
+  (30 r30 s7)  ;; saved register 7
+  (31 r31 s8)  ;; saved register 8
   (32 pc))     ;; program counter
  
 ;;;============================================================================

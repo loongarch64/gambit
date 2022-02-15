@@ -65,9 +65,9 @@
     cpu-default-nb-gvm-regs ;; GVM register count
     cpu-default-nb-arg-regs ;; GVM register count for passing arguments
     loongarch64-registers         ;; Main registers
-    (loongarch64-tp)             ;; Processor state pointer (PS)
+    (loongarch64-tp)              ;; Thread local storage pointer (TP)
     (loongarch64-sp)              ;; Stack pointer (SP)
-    (loongarch64-fp)))           ;; frame pointer (FP)
+    (loongarch64-fp)))            ;; Frame pointer (FP)
 
 (define loongarch64-registers
   (vector
