@@ -270,7 +270,7 @@ loongarch64-pcaddu12i ;;auipc
   (18 r18 t6)  ;; temporary register 6
   (19 r19 t7)  ;; temporary register 7
   (20 r20 t8)  ;; temporary register 8
-  (21 r21 x)   ;; reserved Unused
+  (21 r21 r21) ;; reserved Unused
   (22 r22 fp)  ;; frame pointer
   (23 r23 s0)  ;; saved register 0
   (24 r24 s1)  ;; saved register 1
